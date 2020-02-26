@@ -1,0 +1,119 @@
+body{
+    text-align: center;
+}
+
+.flexContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.flexContainerSplit{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.order1{
+    order:-3;
+}
+.order2{
+order: -2;
+}
+
+.orderblue{
+    order:-1;
+}
+
+.orderyellow{
+    order: -1;
+}
+
+
+.Content{
+    width: 300px;
+    height: 150px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 1em;
+}
+
+.red{
+    background-color: red;
+}
+
+.blue {
+    background-color: lightblue;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+@media only screen and (min-width: 768px){
+
+    .flexContainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .flexContainerSplit{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .order1{
+        order:-3;
+    }
+    .order2{
+    order: -1;
+    }
+    
+    .orderblue{
+        order:-2;
+    }
+
+    .orderyellow{
+        order: unset;
+    }
+
+
+}
+
+@media only screen and (min-width: 1024px){
+
+    .flexContainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: baseline;
+        align-self: flex-start;
+    }
+
+    
+    .flexContainerSplit{
+        all: unset;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .order1{
+        order:-2;
+    }
+    .orderblue{
+        order:-1;
+        height: 450px;
+    }
+
+    .order8{
+        order: 1;
+    }
+
+    .yellow{
+        width: 500px;
+        height: 500px;
+    }
+}
