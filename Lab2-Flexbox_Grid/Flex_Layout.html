@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flex Layout</title>
+    <title>FlexBox</title>
     <link rel="stylesheet" href="FlexLayout_files/style.css">
 </head>
 <body>
-
-    <div class="flexContainer">
-        <div class="flexContainerSplit">
-            <div class="Content order1 red"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima.  </div>
-            <div class="Content order2 red"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima. </div>
-            <div class="Content order4 red"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima. </div>
-            <div class="Content order5 red"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima. </div>
-            <div class="Content orderblue blue"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima. </div>
+    <div class="flexContainer"> 
+        <div class="table">
+            <div class="red content"><p>Box 1</p></div>
+            <div class="red content"><p>Box 2</p></div>         
+            <div class="blue content"><p>painbox</p></div>
+            <div class="red content" id="aftergreen"><p>Box 1</p></div>     
+            <div class="red content"><p>Box 4</p></div>
         </div>
-        <div class="flexContainerSplit">
-            <div class="Content order6 red"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima.  </div>
-            <div class="Content order7 red"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima. </div>
-            <div class="Content orderyellow yellow"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima. </div>
-            <div class="Content order9 red"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima. </div>
-            <div class="Content order0 red"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, minima. </div>
-        </div>
-        </div>
+        <div class="table">
+            <div class="yellow content" id="yellow"><p>LootBox</p></div>
+            <section class="test">
+                <div class="row " style="
+                padding-bottom: 10px;
+            ">
+                    <div class="red content"><p>Box 6</p></div>
+                    <div class="red content"><p>Box 8</p></div>
+                </div>
+                <div class="row">
+                    <div class="red content"><p>Box 9</p></div>
+                    <div class="red content" id="final"><p>Box 1</p></div>
+                </div>
+            </section>
+        </div>      
     </div>
-</body>
-</html>

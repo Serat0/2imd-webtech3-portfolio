@@ -1,119 +1,87 @@
-body{
-    text-align: center;
+p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: 2em;
+    width: 100%;
 }
 
-.flexContainer{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-.flexContainerSplit{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-}
-
-.order1{
-    order:-3;
-}
-.order2{
-order: -2;
-}
-
-.orderblue{
-    order:-1;
-}
-
-.orderyellow{
-    order: -1;
-}
-
-
-.Content{
-    width: 300px;
-    height: 150px;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 1em;
-}
-
-.red{
+.red {
     background-color: red;
 }
-
 .blue {
     background-color: lightblue;
 }
-
-.yellow{
+.yellow {
     background-color: yellow;
 }
 
-@media only screen and (min-width: 768px){
-
-    .flexContainer{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .flexContainerSplit{
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
-
-    .order1{
-        order:-3;
-    }
-    .order2{
-    order: -1;
-    }
-    
-    .orderblue{
-        order:-2;
-    }
-
-    .orderyellow{
-        order: unset;
-    }
-
-
+.content {
+    width: 300px;
+    height: 100px;
+    margin: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
 }
 
-@media only screen and (min-width: 1024px){
-
-    .flexContainer{
+@media (min-width: 700px) {
+    .flexContainer {
         display: flex;
+        flex-direction: row;
+    }
+    .table {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .yellow {
+        order: 2;
+    }
+    #final {
+        order: 2;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+    .yellow {
+        margin-top: -230px;
+    }
+    #final {
+        margin-top: 140px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .content {
+        width: 150px;
+    }
+    .flexContainer {
+        flex-direction: column;
+    }
+    .table {
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: baseline;
-        align-self: flex-start;
     }
-
-    
-    .flexContainerSplit{
-        all: unset;
+    #yellow {
+        order: 3;
+        width: 320px;
+        height: 220px;
+    }
+    .blue {
+        height: 340px;
+    }
+    .row {
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
     }
-    .order1{
-        order:-2;
-    }
-    .orderblue{
-        order:-1;
-        height: 450px;
+    .table .row .content {
+        margin-bottom: 10px;
     }
 
-    .order8{
-        order: 1;
-    }
-
-    .yellow{
-        width: 500px;
-        height: 500px;
+    .table:last-child {
+        width: 850px;
+        margin-top: -240px;
+        justify-content: space-between;
     }
 }
