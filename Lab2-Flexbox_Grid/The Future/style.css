@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+.content { 
+    width: 300px;
+    height: 250px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue{
+    background-color: lightblue;
+}
+
+.yellow{
+    background-color:yellow;
+}
