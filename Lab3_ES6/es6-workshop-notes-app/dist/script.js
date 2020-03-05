@@ -33,15 +33,14 @@ class Note {
     // HINT🤩
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
-
-    localStorage.setItem('notes', JSON.stringify(notesArray))
-    const notes = JSON.parse(localStorage.getItem('notes'));
-    
-    //if Statement
-    let notesArray = [];
-    
-    notesArray.push(this.title)
-  }
+    let noteArray = JSON.parse(localStorage.getItem(`noteArray`));
+      if(noteArray == null) {
+        noteArray = [];
+      }
+      noteArray.push(this.title);
+      console.log(noteArray);
+      localStorage.setItem(`noteArray`, JSON.stringify(noteArray));
+    }
   
   remove(){ //Finished
     // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
