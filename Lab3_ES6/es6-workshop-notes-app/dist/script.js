@@ -17,7 +17,7 @@ class Note {
 
     newNote.appendChild(newP);
     newNote.appendChild(newA).addEventListener('click', this.remove.bind(newNote));
-    
+
     // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
     
     return newNote;
@@ -33,6 +33,11 @@ class Note {
     // HINT🤩
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
+
+    let notes = [];
+    notes.push(this.title)
+    console.log(notes);
+    
   }
   
   remove(){
@@ -51,7 +56,7 @@ class App {
     // pressing the enter key should also work
     this.btnAdd = document.querySelector("#btnAddNote");
     this.btnAdd.addEventListener("click", this.createNote.bind(this));
-    // this.loadNotesFromStorage();
+    this.loadNotesFromStorage();
   }
   
   loadNotesFromStorage() {
@@ -67,13 +72,13 @@ class App {
     let text = document.querySelector("#txtAddNote").value;
     let note = new Note(text);
     note.add();
-    
-    // note.saveToStorage();
-    // this.reset();
+    note.saveToStorage();
+    this.reset();
   }
   
   reset(){
     // this function should reset the form 
+    document.querySelector("#txtAddNote").value = '';
   }
   
 }
