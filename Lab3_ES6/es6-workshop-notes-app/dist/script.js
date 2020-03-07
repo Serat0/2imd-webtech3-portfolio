@@ -29,7 +29,7 @@ class Note {
     document.querySelector(".notes").appendChild(this.element);
   }
   
-  saveToStorage(){
+  saveToStorage(){ //Finished
     // HINT🤩
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
@@ -46,8 +46,9 @@ class Note {
     // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
     // in this function, 'this' will refer to the current note element
     this.remove();
+    }
   } 
-}
+
 
 class App {
   constructor() {
@@ -55,10 +56,19 @@ class App {
   
     // HINT🤩
     // clicking the button should work
-    // pressing the enter key should also work
     this.btnAdd = document.querySelector("#btnAddNote");
     this.btnAdd.addEventListener("click", this.createNote.bind(this));
     this.loadNotesFromStorage();
+
+    // pressing the enter key should also work
+
+    this.keyPressEnter = document.querySelector("#txtAddNote");
+      this.keyPressEnter.addEventListener("keydown", function(enterPress) {
+        if(enterPress.keyCode == 13) {
+          enterPress.preventDefault();
+          document.querySelector("#btnAddNote").click();
+      }
+    });
   }
   
   loadNotesFromStorage() {
