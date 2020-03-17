@@ -33,22 +33,22 @@ class Note {
     // HINT🤩
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
-    let noteArray = JSON.parse(localStorage.getItem(`noteArray`));
+
+    let noteArray = JSON.parse(localStorage.getItem("noteArray"));
       if(noteArray == null) {
         noteArray = [];
       }
-      noteArray.push(this.title);
-      console.log(noteArray);
-      localStorage.setItem(`noteArray`, JSON.stringify(noteArray));
-    }
-  
+      function noteArrayFill(note){ noteArray.push(note); console.log(note);}
+      let note = this.title;
+      noteArrayFill(note);
+      localStorage.setItem("noteArray", JSON.stringify(noteArray));
+  }  
   remove(){ //Finished
     // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
     // in this function, 'this' will refer to the current note element
     this.remove();
     }
   } 
-
 
 class App {
   constructor() {
@@ -75,15 +75,14 @@ class App {
     // HINT🤩
     // load all notes from storage here and add them to the screen
     // something like note.add() in a loop would be nice
-    let notesArray = JSON.parse(localStorage.getItem('noteArray'));
-    if (notesArray.length > 0) {
-      notesArray.forEach(title => {
+    let retrieveNote = JSON.parse(localStorage.getItem("noteArray"));
+
+    if (retrieveNote != null){
+        retrieveNote.forEach(title => {
         let note = new Note(title);
         note.add();
-      }
-      
-    );
-      
+      } 
+    )
     }
   }
    
