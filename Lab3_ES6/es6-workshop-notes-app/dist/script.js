@@ -13,13 +13,10 @@ class Note {
     let newA = document.createElement("a");
     newA.innerHTML = "Remove";
 
-  
-
     newNote.appendChild(newP);
     newNote.appendChild(newA).addEventListener('click', this.remove.bind(newNote));
 
     // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
-    
     return newNote;
   }
   
@@ -47,9 +44,14 @@ class Note {
     // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
     // in this function, 'this' will refer to the current note element
     this.remove();
-    }
-  } 
 
+    let removeNote = JSON.parse(localStorage.getItem("noteArray"));
+    let retrieveTitle = this.querySelector("p").innerHTML;
+    let removeNoteLocation = removeNote.indexOf(retrieveTitle);
+    removeNote.splice(removeNoteLocation, 1);
+    localStorage.setItem("noteArray", JSON.stringify(removeNote));
+  } 
+}
 class App {
   constructor() {
     console.log("👊🏼 The Constructor!");
