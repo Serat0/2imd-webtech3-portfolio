@@ -30,10 +30,20 @@ class Weather {
                     data.currently.summary;
                 document.querySelector(".temp").innerHTML = 
                     data.currently.temperature + " Degrees";
+                
+                    if(data.currently.temperature > 15){
+                        document.getElementById("advertisement").src = "https://cdn.discordapp.com/attachments/614375570251317248/692716301491372082/JupilerAd.jpg";
+                    } else {
+                        document.getElementById("advertisement").src = "https://cdn.discordapp.com/attachments/614375570251317248/692716329282568272/StarbucksAd.png";
+                    }
             })
             .catch(err=> {
                 console.log(err);
             })
+    }
+
+    Advert(){
+        
     }
 
     errorlocation(err){
